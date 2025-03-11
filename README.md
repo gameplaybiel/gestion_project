@@ -22,6 +22,39 @@ Project Gestion é um sistema de gestão de projetos desenvolvido seguindo os pr
 * H2 Database
 * JUnit e Mockito
 
+# Para rodar no Docker
+Para criar uma imagem do Docker:
+```bash
+  docker build -f deploy/Dockerfile -t project_gestion .
+```
+
+Para criar um contêiner do Docker:
+```bash
+    docker run -d --name project_gestion_container project_gestion
+```
+
+Verificar o status do Docker
+```bash
+  docker ps
+```
+# Kubernetes
+Para rodar o código:
+```bash
+     minikube start --driver=docker
+```
+
+Criar um Deployment de Teste
+```bash
+    kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
+```
+
+Expor o Serviço
+```bash
+  kubectl expose deployment hello-minikube --type=NodePort --port=8080
+```
+
+Acessar o serviço de navegador
+
 # JSON
 ```
 Projects:
